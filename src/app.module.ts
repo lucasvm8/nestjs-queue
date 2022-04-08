@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MessagesModule } from './messages/messages.module';
-import { MsgController } from './msg/msg.controller';
-import { MsgService } from './msg/msg.service';
+import { MsgModule } from './msg/msg.module';
 
 // - Decorator
 @Module({
-  imports: [MessagesModule],
-  controllers: [AppController, MsgController],
-  providers: [AppService, MsgService],
+  imports: [MsgModule],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
