@@ -1,1 +1,4 @@
-export class Message {}
+export class Message {
+  titulo: string;
+  asd: number;
+}
