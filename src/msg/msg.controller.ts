@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Delete } from '@nestjs/common';
 import { Message } from './Message';
 import { MsgService } from './msg.service';
 
@@ -21,5 +21,10 @@ export class MsgController {
   findById(@Param() params) {
     console.log(typeof params.id);
     return this.msgService.findById(+params.id);
+  }
+
+  @Delete(':id')
+  delete(@Param() params) {
+    return this.msgService.delete(+params.id);
   }
 }
