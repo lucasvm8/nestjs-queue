@@ -3,6 +3,7 @@ import { Message } from './Message';
 
 @Injectable()
 export class MsgService {
+  
   private messages: Message[] = [
     {
       id: 1,
@@ -31,5 +32,8 @@ export class MsgService {
     delete this.messages[index];
 
     return true;
+  }
+  update(id: number) {
+    return;
   }
 }
