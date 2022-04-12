@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Message } from './Message';
+import { Msg } from './msg.interface';
 
 @Injectable()
 export class MsgService {
-  
-  private messages: Message[] = [
+  private messages: Msg[] = [
     {
       id: 1,
       text: 'mensagem um',
@@ -23,7 +22,7 @@ export class MsgService {
     return this.messages.find((m) => m.id === id);
   }
 
-  create(message: Message) {
+  create(message: Msg) {
     return this.messages.push(message);
   }
 
@@ -34,6 +33,6 @@ export class MsgService {
     return true;
   }
   update(id: number) {
-    return;
+    return id;
   }
 }
